@@ -8,12 +8,12 @@ How To Prepare to Use!!
 2.在GitHub上新建一个repository: 例如: Simulator 分支：master
 
 3.在Local上新建秘钥
-	GitBash: ssh-keygen -t rsa -C "396934200@qq.com"
+    GitBash: ssh-keygen -t rsa -C "396934200@qq.com"
     More: 396934200@qq.com 是注册用的邮箱，生成id_rsa id_rsa.pub 一对秘钥文件
 	
 4.在GitHub的Account settings”--“SSH Keys”上新增SSH秘钥配置，使用id_rsa.pub中的文件内容
     
-	GitBash: git config --global user.name "Kinsh"
+    GitBash: git config --global user.name "Kinsh"
     GitBash: git config --global user.email "396934200@qq.com"
     GitBash: git config --global --list
     GitBash: ssh -T git@github.com
@@ -27,38 +27,38 @@ How To Use !!
 
     GitBash: git init 
     GitBash: git remote add origin git@github.com:wondest/Simulator.git
-	GitBash: git remote -v
-	GitBash: git remote remove $name
+    GitBash: git remote -v
+    GitBash: git remote remove $name
 	
 2.新增或者切换分支
     GitBash: git checkout -b dev  
-	或者
-	GitBash: git branch dev
+     或者
+    GitBash: git branch dev
     GitBash: git checkout dev
 	
     GitBash: git branch -d dev
 	
-	GitBash: git branch -a
+    GitBash: git branch -a
 
 3.获取分支
      git clone:
-	   git clone xxx.git
-	   git clone xxx.git yyy目录
+       git clone xxx.git
+       git clone xxx.git yyy目录
 	   
-	 GibBash: git clone https://github.com/wondest/Simulator.git
+       GibBash: git clone https://github.com/wondest/Simulator.git
 	 
-	 git fetch:
-	   git fetch origin
-	   git fetch origin xxx分支
+     git fetch:
+       git fetch origin
+       git fetch origin xxx分支
 	   
-	 git merge xxx分支、
-	   将xxx分支合并到当前分支
+     git merge xxx分支、
+       将xxx分支合并到当前分支
 	   
-	 git pull:
-	   git pull origin
-	   git pull origin xxx分支
+     git pull:
+       git pull origin
+       git pull origin xxx分支
 	   
-	 git pull 效果上等于 git fetch + git merge
+     git pull 效果上等于 git fetch + git merge
 	 
 4.提交代码
   
@@ -67,18 +67,17 @@ How To Use !!
     git add file3.txt
     git commit  -m  "add 3 files."
 	
-	git rm test.txt
-	git commit -m "remove test.txt"
+    git rm test.txt
+    git commit -m "remove test.txt"
 	
 5.提交分支
     git push origin xxx分支
+      将当前分支 推送到 远程的 xxx分支；
 	
-	将当前分支 推送到 远程的 xxx分支；
+    git push origin master
+     上面命令表示，将本地的master分支推送到origin主机的master分支。如果master不存在，则会被新建。
 	
-	git push origin master
-	  上面命令表示，将本地的master分支推送到origin主机的master分支。如果master不存在，则会被新建。
-	
-	git push origin --delete master  删除当前分支
+    git push origin --delete master  删除当前分支
 
 6.举例：
   1. 开发某个网站。
