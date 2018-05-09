@@ -65,6 +65,7 @@ How To Use !!
     git add file1.txt
     git add file2.txt
     git add file3.txt
+	git add -A file  ##可以是目录
     git commit  -m  "add 3 files."
 	
     git rm test.txt
