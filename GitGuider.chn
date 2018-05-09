@@ -5,7 +5,7 @@ How To Prepare to Use!!
     email: 396934200@qq.com
     password: xxxxxxxxxx
 
-2.在GitHub上新建一个repository: 例如: Simulator 分支：master
+2.在GitHub上新建一个repository: 例如: CodeSpace 分支：master
 
 3.在Local上新建秘钥
     GitBash: ssh-keygen -t rsa -C "396934200@qq.com"
@@ -26,7 +26,7 @@ How To Use !!
 1.新增或删除远程地址
 
     GitBash: git init 
-    GitBash: git remote add origin git@github.com:wondest/Simulator.git
+    GitBash: git remote add origin git@github.com:wondest/CodeSpace.git
     GitBash: git remote -v
     GitBash: git remote remove $name
 	
@@ -45,7 +45,7 @@ How To Use !!
        git clone xxx.git
        git clone xxx.git yyy目录
 	   
-       GibBash: git clone https://github.com/wondest/Simulator.git
+       GibBash: git clone https://github.com/wondest/CodeSpace.git
 	 
      git fetch:
        git fetch origin
