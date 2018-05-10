@@ -42,9 +42,9 @@ class AbstractSignal:
         ##
         mid_data2 = self._append_signal(mid_data1)
         ##
-        result = self._append_filter(mid_data2)
+        signal_data = self._append_filter(mid_data2)
         ##
-        return result
+        return signal_data
  
 """
   双均线策略：
@@ -112,7 +112,7 @@ if __name__ == '__main__':
     price = pd.read_csv('data//sh000001.day.csv', 
                         sep=',',
                         header=None,
-                        names=['id','date','open','high', 'low', 'close', 'volumn1', 'volumn2','rate'],
+                        names=['code','date','open','high', 'low', 'close', 'money', 'volume','rate'],
                         index_col=['date'],
                         parse_dates=['date'],
                         date_parser=dateParser)
