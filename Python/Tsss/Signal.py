@@ -11,7 +11,9 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 """
-  Template Designer
+  原始交易数据 => 买卖信号数据 **
+  买卖信号数据 => 资金交易数据
+  资金交易数据 => 策略评价数据
 """
 class AbstractSignal:
     ## 初始化函数
@@ -127,6 +129,27 @@ if __name__ == '__main__':
     data = test.touch(price)
     
     data[['close','filter']].plot(ax=ax1)
+    
+    ## Annotate List
+    note_data =[]
+
+    ## Generate Annotate Data
+    for index,row in data.iterrows():
+        if row['s-buy']:
+            note_data.append([index,row['close'],'red','B'])
+        if row['s-sell']:
+            note_data.append([index,row['close'],'green','S'])
+
+    ## Paint Annotates
+    for x,y,color,label in note_data:
+        ax1.annotate(label,
+                     xy = (x, y + 10),
+                     xytext = (x, y + 30),
+                     arrowprops = dict(facecolor=color,headwidth=7.5,headlength=7.5,width=5),
+                     horizontalalignment='left',
+                     verticalalignment='top')
+    
+    ## Paint Filter
     data['s-filter'].plot(ax=ax2)
     data['diff'] = (data['filter']-data['filter'].shift(1))
     #data[['filter','diff']].plot()
