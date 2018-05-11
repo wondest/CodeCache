@@ -2,7 +2,7 @@
 """
 Created on Wed May  9 13:40:44 2018
 
-@author: szkfzx
+@author: xieqin
 
    输入：原始交易数据
    数据：带买入卖出信号数据

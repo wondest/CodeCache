@@ -2,7 +2,7 @@
 """
 Created on Thu May 10 11:06:18 2018
 
-@author: szkfzx
+@author: xieqin
 """
 import pandas as pd
 import Account

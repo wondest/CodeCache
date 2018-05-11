@@ -2,7 +2,7 @@
 """
 Created on Thu May 10 11:03:07 2018
 
-@author: szkfzx
+@author: xieqin
 """
 
 class InnerAccount:
