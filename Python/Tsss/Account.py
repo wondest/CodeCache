@@ -265,6 +265,7 @@ class CustAccount:
         self.balance = 0.00
         self.daily_profit = 0.00
         self.total_profit = 0.00
+        self.daily_rate = 0.00
         
         ##最近交易日期
         self.last_deal_date='1899/12/31'
@@ -294,6 +295,10 @@ class CustAccount:
       收集客户名下所有账户的数据
     """
     def gather(self, tran_date):
+        
+        ## 前一日的余额
+        old_balance = self.balance
+        
         self.balance = 0.00
         self.daily_profit = 0.00
         self.total_profit = 0.00
@@ -304,6 +309,11 @@ class CustAccount:
             self.balance += self.accounts[acct_name].get_bal()
             self.daily_profit += self.accounts[acct_name].get_daily_profit()
             self.total_profit += self.accounts[acct_name].get_total_profit()
+            
+            if old_balance == 0:
+                self.daily_rate = 0
+            else:
+                self.daily_rate = self.daily_profit/old_balance
 
     def get_bal(self):
         return self.balance
@@ -314,11 +324,13 @@ class CustAccount:
     def get_total_profit(self):
         return self.total_profit
 
+    def get_daily_rate(self):
+        return self.daily_rate
     """
       返回持仓信息
     """
     def get_detail(self):
-        return {'date':self.last_deal_date,'balance':self.get_bal(),'daily_profit':self.get_daily_profit(),'total_profit':self.get_total_profit()}
+        return {'date':self.last_deal_date,'balance':self.get_bal(),'daily_profit':self.get_daily_profit(),'total_profit':self.get_total_profit(),'rate':self.get_daily_rate()}
  
     
 if __name__ == '__main__':

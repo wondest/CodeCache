@@ -142,7 +142,7 @@ class DmaTrader(AbstractTrader):
         self.cust_account.gather(tran_date)
         
         #self.tran_data.append(self.cust_account.get_detail())
-        self.acct_data.append({'date':tran_date,'balance':self.cash_account.get_bal()})
+        self.acct_data.append(self.cust_account.get_detail())
     
     ## 添加交易数据
     def _add_tran_data(self, tran_date, sign_tag, tran_amount, tran_price):
