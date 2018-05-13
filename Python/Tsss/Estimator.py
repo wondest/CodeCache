@@ -110,8 +110,9 @@ if __name__ == '__main__':
     origin_data = pd.read_csv('data//sh000001.day.csv', 
                         sep=',',
                         header=None,
-                        names=['id','date','open','high', 'low', 'close', 'money', 'volume','rate'],
+                        names=['code','date','open','high', 'low', 'close', 'money', 'volume','rate'],
                         index_col=['date'],
+                        dtype={'code': str},
                         parse_dates=['date'],
                         date_parser=dateParser)
     dma_signal = Signal.DmaSignal(slow_ma=50, fast_ma=10, filter_ma=222)
