@@ -159,8 +159,9 @@ plt.ylabel('Frequency')
 plt.legend(loc='upper right')
 plt.show()          
     
-
-
+"""
+"""
+file.close()
 
 
 
